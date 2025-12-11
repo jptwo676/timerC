@@ -1,6 +1,6 @@
-#ifndef FILE_HELP
-#define FILE_HELP
+#ifndef TIME_MAN
+#define TIME_MAN
 
 int readln_str(char str[], int max_len);
 
-#endif //FILE_HELP
+#endif // TIME_MAN
