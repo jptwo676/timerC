@@ -1,0 +1,5 @@
+main.o
+todoC
+data.txt
+/build
+.dir-locals.el
