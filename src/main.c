@@ -30,11 +30,11 @@ void print_help()
 
 int main(int argc, char *argv[])
 {
-  int r_time_decrease;
-  int r_time_increase;
-  int r_readln;
-  char str_menu_op[2];
-  char ch_menu_op;
+  /* int r_time_decrease; */
+  /* int r_time_increase; */
+  /* int r_readln; */
+  /* char str_menu_op[2]; */
+  /* char ch_menu_op; */
 
   // doing command line args
   int option;  
@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 
         case 'd':
           printf("option -d with values '%s'\n", optarg);
+          cmd_time_decrease(optarg);
           break;
 
           // working on this rn

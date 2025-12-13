@@ -47,7 +47,6 @@ int get_min_int()
   if(time_int == 0)
     {
       printf("Invalid value, only numbers allowed.\n");
-      printf("time_int == %c\n", time_int);
       return 0;
     }
   else
