@@ -23,7 +23,7 @@ int int_time_increase(int (*p_get_min) (void))
       // end timer
       if(min_counter == min_target)
         {
-          return 0;
+          return 1;
         }
       // reset seconds
       if(sec_counter == 59)
@@ -36,7 +36,7 @@ int int_time_increase(int (*p_get_min) (void))
           sec_counter++;
         }
     }
-  return 1;
+  return 0;
 }
 
 // x to 0
@@ -67,7 +67,7 @@ int int_time_decrease(int (*p_get_min) (void))
       // end timer
       if(min_counter == 0 && sec_counter == 0)
         {
-          return 0;
+          return 1;
         }
       // resets seconds
       if(sec_counter == 0)
@@ -80,7 +80,7 @@ int int_time_decrease(int (*p_get_min) (void))
           sec_counter--;
         }
     }
-  return 1;
+  return 0;
 }
 
 

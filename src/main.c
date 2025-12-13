@@ -3,6 +3,8 @@
 #include <getopt.h>
 
 #include "../include/time_management.h"
+
+// these are separated in case of future features for each usage.
 #include "../include/cmd_tasks.h"
 #include "../include/interactive_tasks.h"
 
@@ -30,12 +32,6 @@ void print_help()
 
 int main(int argc, char *argv[])
 {
-  /* int r_time_decrease; */
-  /* int r_time_increase; */
-  /* int r_readln; */
-  /* char str_menu_op[2]; */
-  /* char ch_menu_op; */
-
   // doing command line args
   int option;  
 
@@ -62,13 +58,12 @@ int main(int argc, char *argv[])
           break;
 
         case 'd':
-          printf("option -d with values '%s'\n", optarg);
-          cmd_time_decrease(optarg);
+          /* calls cmd_time_increase because when in the background
+             it acts the same way */
+          cmd_time_increase(optarg);
           break;
 
-          // working on this rn
         case 'i':
-          printf("option -i with values '%s'\n", optarg);
           cmd_time_increase(optarg);
           break;
 
