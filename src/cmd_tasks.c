@@ -12,6 +12,11 @@ int cmd_time_increase(char *arg)
   int min_counter = 0;
   
   int min_target = atoi(arg);
+  if(min_target == 0)
+    {
+      printf("Invalid value, only numbers allowed as argument.\n");
+      return 0;
+    }
   int increasing_check = 0;
 
   while(increasing_check == 0)
@@ -37,5 +42,21 @@ int cmd_time_increase(char *arg)
         }
     }
   return 1;
+}
+
+int cmd_time_decrease(char *arg)
+{
+  int min_init = atoi(arg);
+  if(min_init == 0)
+    {
+      printf("Invalid value, only numbers allowed.\n");
+      return 0;
+    }
+  int decreasing_check = 0;
+  
+  int sec_counter = 59;
+  int min_counter = min_init;
+
+
 }
 
