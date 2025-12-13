@@ -11,8 +11,8 @@ int cmd_time_increase(char *arg)
   int sec_counter = 0;
   int min_counter = 0;
   
-  int min_target = atoi(arg);
-  if(min_target == 0)
+  int min_init = atoi(arg);
+  if(min_init == 0)
     {
       printf("Invalid value, only numbers allowed as argument.\n");
       return 0;
@@ -21,14 +21,13 @@ int cmd_time_increase(char *arg)
 
   while(increasing_check == 0)
     {
-      printf("time : %02d:%02d elapsed / target time %02d:%02d\n",
-             min_counter, sec_counter, min_target, 0);
       sleep(1);
 
       // end timer
-      if(min_counter == min_target)
+      if(min_counter == min_init)
         {
-          return 0;
+          printf("\nDone! %d minute(s) have passed.", min_init);
+          return 1;
         }
       // reset seconds
       if(sec_counter == 59)
@@ -41,22 +40,6 @@ int cmd_time_increase(char *arg)
           sec_counter++;
         }
     }
-  return 1;
-}
-
-int cmd_time_decrease(char *arg)
-{
-  int min_init = atoi(arg);
-  if(min_init == 0)
-    {
-      printf("Invalid value, only numbers allowed.\n");
-      return 0;
-    }
-  int decreasing_check = 0;
-  
-  int sec_counter = 59;
-  int min_counter = min_init;
-
-
+  return 0;
 }
 
